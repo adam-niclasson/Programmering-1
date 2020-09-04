@@ -8,7 +8,7 @@ let age = 18
 if (age < 17) {
     console.log(no)
 }
-else if (age == 18 || age > 18) {
+else if (age >= 17 && age <= 25) {
     console.log(yes)
 }
 else {
