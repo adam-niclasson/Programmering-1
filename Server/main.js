@@ -1,6 +1,18 @@
 console.log("Vadim Blyat!")
 
 let name = "Adam Niclasson,"
-let year = 18
+let no = "YOU SHALL NOT PASS!"
+let yes = "You may pass into mother russia"
+let age = 18
 
-console.log("Hello, my name is " + name, "and I'm: " + year)
+if (age < 17) {
+    console.log(no)
+}
+else if (age == 18 || age > 18) {
+    console.log(yes)
+}
+else {
+    console.log("You don't exist and your life is a lie.")
+}
+
+console.log("Hello, my name is " + name, "and I'm: " + age)
