@@ -20,8 +20,11 @@ let foundNiklas = false
 // console.log("I found Niklas at index " + index)
 
 for (let i = 0; i <= 100; i += 2) {
-    console.log(i)
+    if (i % 2 == 0) {
+        console.log(i)
+    }
 }
+
 for (let a = 5; a < 79; a++) {
     if (a % 3 == 0) {
         console.log(a)

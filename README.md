@@ -40,3 +40,8 @@ break -- bryter upp loopen
 }
 
 }
+
+Modulus
+
+var a = 1-10
+if (a % 7 == 0)
