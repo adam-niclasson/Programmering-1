@@ -30,3 +30,9 @@ for (let a = 5; a < 79; a++) {
         console.log(a)
     }
 }
+
+let teachers = ["Niklas", "Victor", "Parvin"]
+
+for (let n = teachers.length - 1; n >= 0; n--) {
+    console.log(teachers[n])
+}
