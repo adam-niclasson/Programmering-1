@@ -22,6 +22,8 @@ let foundNiklas = false
 for (let i = 0; i <= 100; i += 2) {
     console.log(i)
 }
-for (let a = 5; a <= 79; a /= 3) {
-    console.log(a)
+for (let a = 5; a < 79; a++) {
+    if (a % 3 == 0) {
+        console.log(a)
+    }
 }
