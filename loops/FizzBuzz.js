@@ -4,7 +4,7 @@
 
 for (let a = 0; a <= 100; a++) {
     if (a % 2 == 0) {
-        console.log(a)
+        console.log(a + " hey")
     }
     else if (a % 3 == 0 && a % 5 == 0) {
         console.log("FizzBuzz")
