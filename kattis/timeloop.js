@@ -2,8 +2,8 @@ var readlineSync = require('readline-sync');
 
 var a = readlineSync.question('N? ')
 
-for (let a = 1; a <= 100; a++) {
-    if (a % 1 == 0) {
-        console.log(a + " Abracadabra")
+for (let i = 1; i <= 100; i++) {
+    if (i % 1 == 0) {
+        console.log(i * a + " Abracadabra")
     }
 }
