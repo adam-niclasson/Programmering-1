@@ -5,7 +5,13 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-var alf = ["A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,R,S,T,U,V,W,X,Y,Z,_,."]
+const alf = ["A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,R,S,T,U,V,W,X,Y,Z,_,."]
 
-var a = readline.question('Enter Text Here?: ');
-var ans;
+rl.question("Enter text here: ", (answer) => {
+    let string = answer.split('').reverse()
+    console.log(string)
+
+    rl.question("How many rotations? ", (answer) => {
+
+    })
+})
