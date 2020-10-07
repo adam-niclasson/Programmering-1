@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 const alf = "ABCDEFGHIJKLMNOPRSTUVWXYZ_."
 
 rl.question("Enter text and a number here: ", (answer) => {
-    let splitAnswer = answer.split('')
+    let splitAnswer = answer.split(' ')
 
     let rotation = Number(splitAnswer[0])
     let message = splitAnswer[1]
