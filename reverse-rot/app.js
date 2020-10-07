@@ -5,13 +5,32 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-const alf = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,R,S,T,U,V,W,X,Y,Z,_,."
+const alf = "ABCDEFGHIJKLMNOPRSTUVWXYZ_."
 
-rl.question("Enter text here: ", (answer) => {
-    let string = answer.split('').reverse()
-    console.log(string)
+rl.question("Enter text and a number here: ", (answer) => {
+    let splitAnswer = answer.split('')
 
-    rl.question("How many rotations? ", (answer) => {
+    let rotation = Number(splitAnswer[0])
+    let message = splitAnswer[1]
 
-    })
+    let result = ""
+
+    for (const letter of message) {
+        let letterIndex = alf.indexOf(letter)
+
+        let newIndex = letterIndex + rotation
+
+        if (newIndex > 27) {
+            newIndex = newIndex - 28
+        }
+
+        let newLetter = alf[newIndex]
+
+        result += newLetter
+    }
+    let rResult = result.split('').reverse().join('')
+    console.log(rResult)
+
+    rl.close()
+
 })
