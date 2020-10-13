@@ -21,7 +21,7 @@ function yeet() {
     } else if (d1 < d2) {
         console.log("Gunnar scored " + d2 + " and won!")
     } else if (d1 == d2) {
-        console.log("Tied!");
+        console.log("It's a tie!!");
     }
 }
 
