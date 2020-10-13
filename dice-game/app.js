@@ -13,15 +13,15 @@ function yeet() {
     let s3 = Number(lines[2])
     let s4 = Number(lines[3])
 
-    let d1 = s1 + s2
-    let d2 = s3 + s4
+    let d1 = (s1 + s2) / 2
+    let d2 = (s3 + s4) / 2
 
     if (d1 > d2) {
-        console.log("Emma won!");
+        console.log("Emma scored " + d1 + " and won!");
     } else if (d1 < d2) {
-        console.log("Gunnar Won!")
+        console.log("Gunnar scored " + d2 + " and won!")
     } else if (d1 == d2) {
-        console.log("tied!");
+        console.log("Tied!");
     }
 }
 
