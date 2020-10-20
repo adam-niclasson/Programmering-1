@@ -1,19 +1,30 @@
-let answer = Math.floor((Math.random() * 10) + 1)
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let guess = Math.round(Math.random() * 10 + 1);
 let tries = 5;
-let question = "Guess a number between 1 and 10";
-let guess = '';
 
-while (tries > 0) {
-    guess = prompt(question, guess);
+rl.on('line', (input) => {
+    let ans = parseInt(input);
 
-    if (guess == null) {
-        alert('You lost. Better luck next time!');
-        break;
+    tries--;
+    if (tries == 0) {
+        console.log('Out of tries mate!');
+        process.exit();
     }
-    else if (isFinite(guess) && guess != '') {
-        guess = +guess;
+
+    if (ans > guess) {
+        console.log('U succ, little lower mate!');
     }
-    else if (a) {
-        a
+    else if (ans < guess) {
+        console.log('Nope, guess higher!');
     }
-}
+    else if (ans === guess) {
+        console.log('EZ dubbs!');
+        process.exit();
+    }
+})
