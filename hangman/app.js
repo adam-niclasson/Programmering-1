@@ -14,3 +14,16 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
+
+let guess = Math.round(Math.random() * 10 + 1);
+let tries = 7;
+
+rl.on('line', (input) => {
+    let ans = parseInt(input);
+    
+    tries--;
+    if (tries == 0) {
+        console.log('You lost and the game has ended.')
+        process.exit();
+    }
+})
