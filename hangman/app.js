@@ -15,6 +15,14 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+function rules() {
+    console.log("Välkommen till hänga gubbe")
+    console.log("")
+}
+
+
+
+
 const words = ["sverige, musik, bilder, båtar, cyckel, skola"]
 
 let guess = words(Math.random());
