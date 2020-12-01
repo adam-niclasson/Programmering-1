@@ -5,3 +5,5 @@
    3.1 Meddela att spelaren gissat rätt eller fel.
 4. Spara spelarens gissnignar.
 5. Grattis du är klar.
+
+Let the guessing game begin
