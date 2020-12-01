@@ -22,14 +22,13 @@ function rules() {
     console.log("")
 }
 
+const words = ['sverige', 'musik', 'bilder', 'båtar', 'cyckel', 'skola']
 
-
-
-const words = ["sverige, musik, bilder, båtar, cyckel, skola"]
-
-let guess = words(Math.random());
+const random = Math.floor(Math.random() * words.length);
+console.log(random, words[random]);
 let tries = 7;
 
+rules() //ger spelaren reglerna för hänga gubbe
 rl.on('line', (input) => {
     let ans = parseInt(input);
 
@@ -38,4 +37,6 @@ rl.on('line', (input) => {
         console.log('You lost and the game has ended.')
         process.exit();
     }
+
+
 })
