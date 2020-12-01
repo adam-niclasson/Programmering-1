@@ -26,7 +26,7 @@ const words = ['sverige', 'musik', 'bilder', 'båtar', 'cyckel', 'skola']
 
 const random = Math.floor(Math.random() * words.length);
 console.log(random, words[random]);
-let tries = 7;
+let tries = 7; //antalet gissningar som spelaren har
 
 rules() //ger spelaren reglerna för hänga gubbe
 rl.on('line', (input) => {
