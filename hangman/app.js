@@ -19,13 +19,21 @@ function rules() {
     console.log("Välkommen till hänga gubbe!")
     console.log("Du kommer att få gissa på ett slumpat ord,")
     console.log("men du har bara 7 försök på dig innan gubben blir hängd.")
-    console.log("")
+    console.log("Orden som du kommer att giisa på är i små bokstäver,")
+    console.log("och du får bara gissa med EN liten bokstav i taget.")
+    console.log("Lycka till!!!")
+}
+//array of listed words the player can guess
+const words = ['sverige', 'musik', 'bilder', 'båtar', 'cyckel', 'skola']
+//splits the randomized word so the player is able to guess one letter at a time
+function guessingWord() {
+    let randomWords = words[Math.floor(words.length * Math.random())]
+
+    let splitWords = randomWords.split('')
+    console.log(splitWords)
 }
 
-const words = ['sverige', 'musik', 'bilder', 'båtar', 'cyckel', 'skola']
 
-const random = Math.floor(Math.random() * words.length);
-console.log(random, words[random]);
 let tries = 7; //antalet gissningar som spelaren har
 
 rules() //ger spelaren reglerna för hänga gubbe
