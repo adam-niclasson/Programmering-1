@@ -28,16 +28,18 @@ function rules() {
     console.log("och du får bara gissa med EN liten bokstav i taget.")
     console.log("Lycka till!!!")
 }
+
 //array of listed words the player can guess
 const words = ['sverige', 'musik', 'bilder', 'båtar', 'cyckel', 'skola']
+
 //the placeholder of the randomized word.
 let selected = []
+
 //splits the randomized word so the player is able to guess one letter at a time
 function guessingWord() {
     let randomWords = words[Math.floor(words.length * Math.random())]
 
-    let splitWords = randomWords.split('')
-    console.log(splitWords)
+    return words[random]
 }
 
 
@@ -52,6 +54,7 @@ rl.on('line', (input) => {
         console.log('You lost and the game has ended.')
         process.exit();
     }
+
 
 
 })
