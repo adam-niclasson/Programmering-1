@@ -30,36 +30,52 @@ function rules() {
 }
 
 //array of listed words the player can guess
-var words = ['sverige', 'musik', 'bilder', 'båtar', 'cyckel', 'skola']
-
-//the placeholder of the randomized word.
-let selected = []
+const words = ['sverige', 'musik', 'bilder', 'båtar', 'cyckel', 'skola']
 
 //randomized word lets the player guess one letter at a time
-var guessingword = words[Math.floor(Math.random() * words.length)];
+var guessingword = words[Math.floor(Math.random() * words.length)]
 
-for (var i = 0; i < guessingword.length; i++) {
+//the placeholder of the randomized word.
+// let selected = []
+var guessingword = chosenWord()
+const selected = setupSelected(guessingword)
+var leftOver = guessingword.length;
+
+function chosenWord() {
+    //function that chooses a random word
+}
+function setupSelected(guessingword) {
+    //return the selected word
+}
+function playerProg(selected) {
+    //shows the progress of the player with alerts
+}
+
+
+
+for (var i = 1; i < guessingword.length; i++) {
     selected[i] = "_";
 }
 
-var leftOver = guessingword.length;
-
-    //the game loop
+    //Hänga gubbe loop
 while (leftOver > 0) {
     var guessLetter = prompt("Gissa en bokstav eller avsluta");
     if (guessLetter === 0) {
-        break;
+        break
     } else if (guessLetter.length !== 1) {
-        alert("Guess ONE letter at a time!");
+        alert("Guess ONE letter at a time!")
     } else {
         for (var a = 0; a < guessingword.length; a++) {
-            selected[a] = guessLetter; leftOver--;
+            if (guessingword[a] === guessLetter) {
+                selected[a] = guessLetter; leftOver--;
+            }
         }
     }
 }
 
+//visar att spelaren gissat rätt och säger grattis
 alert(selected.join(" "));
-alert("Snyggt gjort! svaret var " + guessingword);
+alert("Snyggt gjort! svaret var " + guessingword)
 
 let tries = 7; //antalet gissningar som spelaren har
 
