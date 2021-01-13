@@ -12,8 +12,11 @@
 8. du är nu klar, börja programmera och problemsök
 9. Let the game begin :)
 
-// Vilken extra funktionalitet har du tänkt implementera?
 
+
+// Vilken extra funktionalitet har du tänkt implementera?
+//Jag her en funktion som kommer ge spelaren instruktioner på hur man spelar hänga gubbe
+//När spelaren gissat rätt på ordet som valts så kommer det fram en alert ruta som grattulerar spelaren
 
 // Vilka variabler behöver du och till vilket syfte? Här vill jag ha med variabelnamn, datatyp och en förklaring på vad variabeln är till för - på varje variabel.
 // den första variabeln jag har i min kod är 'guessingword' vilket är variabeln som håller i det valda ordet som spelaren ska gissa på.
@@ -23,9 +26,10 @@
 // Vilka olika konstrollstrukturer behövs och till vilket syfte? (Loopar, villkor, etc.) Var så detaljerad som möjligt.
 // Det kommer behövas iaf en while loop, och i den loppen så kommer sjävla hänga gubbe utspela sig, där du gissar en bokstav,
 // får rätt eller fel, till du antingen gissat rätt ord, eller att gubben hängs och du förlorar spelet.
+//
 
 // Vilken funktionalitet kan (och borde) du skapa funktioner av? Här vill jag ha funktionsnamn, returtyp, eventuella parametrar samt vad funktionen ska göra.
-//Jag ska ha en funktion som ger spelaren regler innan spelet börjat, en funktion som ger spelaren sin 'progress' i spelet,
+//Jag ska ha en funktion som ger spelaren regler innan spelet börjat, en funktion som ger spelaren sin 'progress' i spelet.
 //en som väljer ett randomiserat ord och en som håller i det valda ordet och kommer ihåg det.
 
 // Vilka variabler behöver vara åtkomliga inom hela klassen?
