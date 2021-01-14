@@ -33,3 +33,4 @@
 //en som väljer ett randomiserat ord och en som håller i det valda ordet och kommer ihåg det.
 
 // Vilka variabler behöver vara åtkomliga inom hela klassen?
+Jag har några stycker variabler som behöver kommas åt i hela klassen, som arrayn med gissningarna som är rätt och fel för spelare, sen även arrayn med det valda ordet som behöver kommas åt på fler än ett ställe.
