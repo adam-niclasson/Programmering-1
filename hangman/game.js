@@ -64,6 +64,30 @@ function guessCompare(guess, correctGuess, faultyGuess, randomChosenWords) {
 }
 
 //funktionen nedan gör det möjligt för spelaren att gissa en bokstav
-function attemptedGuess(guess)
+function attemptedGuess(guess) {
 
-if (tries === 0)
+    if (tries === 0) {
+        console.log('Du har förlorat, ordet som du skulle gissat på är ' + randomChosenWords)
+        process.exit()
+    }
+    else if (guess != randomChosenWords) {
+        tries--
+        console.log('Det var inte rätt bokstav. gissade bokstäver: ' + faultyGuess)
+        console.log('Antal gissningar som är kvar: ' + tries)
+        console.log('Bokstäver som du gissat rätt: ' + correctGuess)
+    }
+    else if (guess == randomChosenWords) {
+        console.log('Du gissade rätt på den bokstaven! ' + correctGuess)
+    }
+    if(correctGuess == randomChosenWords) {
+        console.log('Grattis du har gissat rätt på ordet och spelet avslutas nu!');
+        process.exit()
+    } 
+
+}
+
+gameStart()
+
+rl.on('line', (guess) => {
+    attemptedGuess(guess)
+})
