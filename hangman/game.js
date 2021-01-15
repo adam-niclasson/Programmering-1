@@ -51,40 +51,6 @@ function chosenWord() {
     randomChosenWords = words[Math.floor(words.length * Math.random())]
 }
 
-//a function that checks if the guess is right or wrong to the chosen word
-function guessCompare(guess, correctGuess, faultyGuess, randomChosenWords) {
-    for (var i = 1; i < randomChosenWords.length; i++) {
-        if (randomChosenWords[i] == guess) {
-            correctGuess.push(guess)
-        }
-        else if(randomChosenWords[i] !== guess) {
-            faultyGuess.push(guess)
-        }
-    }
-}
-
-//funktionen nedan gör det möjligt för spelaren att gissa en bokstav
-function attemptedGuess(guess) {
-
-    if (tries === 0) {
-        console.log('Du har förlorat, ordet som du skulle gissat på är ' + randomChosenWords)
-        process.exit()
-    }
-    else if (guess != randomChosenWords) {
-        tries--
-        console.log('Det var inte rätt bokstav. gissade bokstäver: ' + faultyGuess)
-        console.log('Antal gissningar som är kvar: ' + tries)
-        console.log('Bokstäver som du gissat rätt: ' + correctGuess)
-    }
-    else if (guess == randomChosenWords) {
-        console.log('Du gissade rätt på den bokstaven! ' + correctGuess)
-    }
-    if(correctGuess == randomChosenWords) {
-        console.log('Grattis du har gissat rätt på ordet och spelet avslutas nu!');
-        process.exit()
-    } 
-
-}
 
 gameStart()
 
