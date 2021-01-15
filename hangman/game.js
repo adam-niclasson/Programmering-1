@@ -20,6 +20,12 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+let tries = 7; //antalet gissningar som spelaren har
+
+const correctGuess = []
+const faultyGuess = []
+
+//ger spelaren regler om hur man spelar hänga gubbe
 function rules() {
     console.log("Välkommen till hänga gubbe!")
     console.log("Du kommer att få gissa på ett slumpat ord,")
@@ -29,55 +35,35 @@ function rules() {
     console.log("Lycka till!!!")
 }
 
+//funktionen som startar spelet
+function gameStart() {
+    rules()
+    tries = 7
+    chosenWord()
+}
+
 //array of listed words the player can guess
 const words = ['sverige', 'musik', 'bilder', 'discord', 'cyckel', 'skola']
 
-//randomized word lets the player guess one letter at a time
-var guessingword = words[Math.floor(Math.random() * words.length)]
-
-let tries = 7; //antalet gissningar som spelaren har
-
-//the placeholder of the randomized word.
-// let selected = []
-var guessingword = chosenWord()
-const selected = setupSelected(guessingword)
-var leftOver = guessingword.length;
+const randomChosenWords = []
 
 function chosenWord() {
-    //function that chooses a random word
-}
-function setupSelected(guessingword) {
-    //return the selected word
-}
-function playerProg(selected) {
-    //shows the progress of the player with alerts
+    randomChosenWords = words[Math.floor(words.length * Math.random())]
 }
 
-
-
-for (var i = 1; i < guessingword.length; i++) {
-    selected[i] = "_";
-}
-
-    //Hänga gubbe loop
-while (leftOver > 0) {
-    var guessLetter = prompt("Gissa en bokstav eller avsluta");
-    if (guessLetter === 0) {
-        break
-    } else if (guessLetter.length !== 1) {
-        alert("Guess ONE letter at a time!")
-    } else {
-        for (var a = 0; a < guessingword.length; a++) {
-            if (guessingword[a] === guessLetter) {
-                selected[a] = guessLetter; leftOver--;
-            }
+//a function that checks if the guess is right or wrong to the chosen word
+function guessCompare(guess, correctGuess, faultyGuess, randomChosenWords) {
+    for (var i = 1; i < randomChosenWords.length; i++) {
+        if (randomChosenWords[i] == guess) {
+            correctGuess.push(guess)
+        }
+        else if(randomChosenWords[i] !== guess) {
+            faultyGuess.push(guess)
         }
     }
 }
 
-//visar att spelaren gissat rätt och säger grattis
-alert(selected.join(" "));
-alert("Snyggt gjort! svaret var " + guessingword)
+//funktionen nedan gör det möjligt för spelaren att gissa en bokstav
+function attemptedGuess(guess)
 
-
-rules() //ger spelaren reglerna för hänga gubbe
+if (tries === 0)
