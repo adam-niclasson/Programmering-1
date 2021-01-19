@@ -22,8 +22,9 @@ const rl = readline.createInterface({
 
 let tries = 7; //antalet gissningar som spelaren har
 
-const correctGuess = []
-const faultyGuess = []
+//brackets to hold the right and wrong guesses
+const right = []
+const wrong = []
 
 //ger spelaren regler om hur man spelar hänga gubbe
 function rules() {
@@ -50,6 +51,20 @@ const randomChosenWords = []
 function chosenWord() {
     randomChosenWords = words[Math.floor(words.length * Math.random())]
 }
+
+// denna funktionen jämnför gissni
+function sortGuess(guess, wrong, right, randomChosenWords) {
+    for (var a = 1; a < randomChosenWords.length; a++) {
+        if (randomChosenWords[a] == guess) {
+            right.push(guess)
+        }
+        else if(randomChosenWords[a] !== guess) {
+            wrong.push(guess)
+        }
+    }
+}
+
+//funktionen jag skapat nedan är gjord för att kunna gissa en bokstav
 
 
 gameStart()
