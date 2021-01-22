@@ -36,6 +36,13 @@ function rules() {
     console.log("Lycka till!!!")
 }
 
+
+
+//array of listed words the player can guess
+var words = ['sverige', 'musik', 'bilder', 'discord', 'cyckel', 'skola']
+
+var randomChosenWord = words.toString(' ');
+
 //funktionen som startar spelet
 function gameStart() {
     rules()
@@ -43,32 +50,42 @@ function gameStart() {
     chosenWord()
 }
 
-//array of listed words the player can guess
-const words = ['sverige', 'musik', 'bilder', 'discord', 'cyckel', 'skola']
-
-const randomChosenWords = []
-
 function chosenWord() {
-    randomChosenWords = words[Math.floor(words.length * Math.random())]
+    randomChosenWord = ( words[Math.floor(words.length * Math.random())] )
 }
 
 // denna funktionen jämnför gissni
-function sortGuess(guess, wrong, right, randomChosenWords) {
-    for (var a = 1; a < randomChosenWords.length; a++) {
-        if (randomChosenWords[a] == guess) {
+function sortGuess(guess) {
+    for (var a = 0; a < randomChosenWord[0].length; a++) {
+        if (randomChosenWord[a] == guess) {
             right.push(guess)
         }
-        else if(randomChosenWords[a] !== guess) {
+        else if(randomChosenWord[a] !== guess) {
+            tries--
             wrong.push(guess)
         }
     }
 }
 
 //funktionen jag skapat nedan är gjord för att kunna gissa en bokstav
-
+function playerGuess(guess) {
+    if (right == randomChosenWord) {
+        console.log('Du har gissat rätt, grattis spelet är vunnet!')
+        process.exit()
+    }
+    if (tries === 0) {
+        console.log('Du har slut på gissningar, det rätta ordet är' + randomChosenWord)
+        process.exit()
+    }
+    else if (guess.length == 1) {
+        sortGuess(guess)
+        console.log(right)
+        console.log(wrong)
+    }
+}
 
 gameStart()
 
 rl.on('line', (guess) => {
-    attemptedGuess(guess)
+    playerGuess(guess)
 })
