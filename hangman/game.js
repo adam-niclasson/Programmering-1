@@ -22,10 +22,6 @@ const rl = readline.createInterface({
 
 let tries = 7; //antalet gissningar som spelaren har
 
-//brackets to hold the right and wrong guesses
-const right = []
-const wrong = []
-
 //ger spelaren regler om hur man spelar hänga gubbe
 function rules() {
     console.log("Välkommen till hänga gubbe!")
@@ -36,12 +32,16 @@ function rules() {
     console.log("Lycka till!!!")
 }
 
-
-
 //array of listed words the player can guess
 var words = ['sverige', 'musik', 'bilder', 'discord', 'cyckel', 'skola']
 
 var randomChosenWord = words.toString(' ');
+
+//game progress
+const progress = []
+
+//variabel som säger rätt och fel
+var wrong = true
 
 //funktionen som startar spelet
 function gameStart() {
@@ -51,41 +51,42 @@ function gameStart() {
 }
 
 function chosenWord() {
+    progress.slice(0, progress.length)
     randomChosenWord = ( words[Math.floor(words.length * Math.random())] )
+    for (let a = 0; a < randomChosenWord.length; a++) {
+        progress.push ("_");
+    }
 }
 
 // denna funktionen jämnför gissni
 function sortGuess(guess) {
-    for (var a = 0; a < randomChosenWord[0].length; a++) {
-        if (randomChosenWord[a] == guess) {
-            right.push(guess)
+    for (let a = 0; a < randomChosenWord.length; a++) {
+        if (guess === randomChosenWord[a]) {
+            wrong = false;
+            progress[a] = randomChosenWord[a]
         }
-        else if(randomChosenWord[a] !== guess) {
-            tries--
-            wrong.push(guess)
-        }
+        
     }
-}
-
-//funktionen jag skapat nedan är gjord för att kunna gissa en bokstav
-function playerGuess(guess) {
-    if (right == randomChosenWord) {
-        console.log('Du har gissat rätt, grattis spelet är vunnet!')
+    if (wrong) {
+        tries--;
+        console.log('that guess is incorrect ' + tries + " left ");
+    } else {
+        console.log('det var rätt');
+        console.log(progress.join(""));
+    }
+    if (progress.join("") === randomChosenWord) {
+        console.log('du vann, spelet avslutas nu');
         process.exit()
     }
-    if (tries === 0) {
-        console.log('Du har slut på gissningar, det rätta ordet är' + randomChosenWord)
+    if (tries == 0) {
+        console.log('HAHA du är sämst, ordet var ' + randomChosenWord);
         process.exit()
     }
-    else if (guess.length == 1) {
-        sortGuess(guess)
-        console.log(right)
-        console.log(wrong)
-    }
+    wrong = true
 }
 
 gameStart()
 
 rl.on('line', (guess) => {
-    playerGuess(guess)
+    sortGuess(guess)
 })
