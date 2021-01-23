@@ -33,7 +33,7 @@ function rules() {
 }
 
 //array of listed words the player can guess
-var words = ['sverige', 'musik', 'bilder', 'discord', 'cyckel', 'skola']
+var words = ['sverige', 'musik', 'bilder', 'discord', 'cyckel', 'skola', 'blyat', 'snus', 'coffee']
 
 var randomChosenWord = words.toString(' ');
 
@@ -42,6 +42,9 @@ const progress = []
 
 //variabel som säger rätt och fel
 var wrong = true
+
+//Bokstäver som spelaren gissade fel på
+const done = []
 
 //funktionen som startar spelet
 function gameStart() {
@@ -54,7 +57,7 @@ function chosenWord() {
     progress.slice(0, progress.length)
     randomChosenWord = ( words[Math.floor(words.length * Math.random())] )
     for (let a = 0; a < randomChosenWord.length; a++) {
-        progress.push ("_");
+        progress.push (" _ ");
     }
 }
 
@@ -70,6 +73,9 @@ function sortGuess(guess) {
     if (wrong) {
         tries--;
         console.log('that guess is incorrect ' + tries + " left ");
+        done.push(guess)
+        console.log(done)
+        console.log(progress.join(""));
     } else {
         console.log('det var rätt');
         console.log(progress.join(""));

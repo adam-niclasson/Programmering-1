@@ -16,7 +16,7 @@
 
 // Vilken extra funktionalitet har du tänkt implementera?
 //Jag her en funktion som kommer ge spelaren instruktioner på hur man spelar hänga gubbe
-//När spelaren gissat rätt på ordet som valts så kommer det fram en alert ruta som grattulerar spelaren
+//När spelaren har gissat fel på en bokstav så visas det på skärmen så att spelaren kommer ihåg vad de har gissat på och ej
 
 // Vilka variabler behöver du och till vilket syfte? Här vill jag ha med variabelnamn, datatyp och en förklaring på vad variabeln är till för - på varje variabel.
 // den första variabeln jag har i min kod är 'guessingword' vilket är variabeln som håller i det valda ordet som spelaren ska gissa på.
