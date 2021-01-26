@@ -5,12 +5,11 @@
 //    3.1 om spelaren gissar rätt bokstav så ersätts _ med ex "a"
 //    3.2 gissar spelaren fel så stannar _ som _
 // 4. meddela spelaren om gissningen är rätt respektive fel
-// 5. spelaren får bara gissa EN bokstav i taget
-// 6. spara spelarens gissning så både programmet kommer ihåg vad spelaren gissat och även så spelaren kan se sina gissningar.
-// 7. är hela ordet gissat innan dem 7 gissningarna är slut så avslutas spelet och spelaren vinner
-//    7.1 om spelaren får slut på gissningar så avslutas spelet och spelaren har förlorat.
-// 8. du är nu klar, börja programmera och problemsök
-// 9. Let the game begin :)
+// 5. spara spelarens gissning så både programmet kommer ihåg vad spelaren gissat och även så spelaren kan se sina gissningar.
+// 6. är hela ordet gissat innan dem 7 gissningarna är slut så avslutas spelet och spelaren vinner
+//    6.1 om spelaren får slut på gissningar så avslutas spelet och spelaren har förlorat.
+// 7. du är nu klar, börja programmera och problemsök
+// 8. Let the game begin :)
 
 
 const readline = require('readline');
@@ -61,7 +60,7 @@ function chosenWord() {
     }
 }
 
-// denna funktionen jämnför gissni
+// denna funktionen jämnför gissnigar
 function sortGuess(guess) {
     for (let a = 0; a < randomChosenWord.length; a++) {
         if (guess === randomChosenWord[a]) {
@@ -69,6 +68,9 @@ function sortGuess(guess) {
             progress[a] = randomChosenWord[a]
         }
         
+    }
+    if (guess === 1) {
+        process.exit()
     }
     if (wrong) {
         tries--;
